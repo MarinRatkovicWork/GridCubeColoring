@@ -1,0 +1,36 @@
+GridGenerator.cs 
+     Crates grid from editor
+     Usser has to enter number of colums and rows
+     Cell has to be GameObject wich has Cell.cs attacth, Image and CricleColider2D /in my example is a prefab
+     Grid is GameObject in Ui caregory With GridLyout Group Attacth /in my example Canvas
+
+     Bool AplayGrid Creates grid in editor mode and delites old grid         
+     
+
+Cell.cs
+    Bool ChangeColor Changes color of the image component in Cell object attacht to GridGenerator
+    ***Update needed curently changing color on Update***
+    
+
+CellPaiinter.cs
+     This script is added to the starting cube of your choice in editor mode.
+  RandomAutomaticFinder
+    Finds the cube closest to the initial cube and after changing its color, 
+    transfers the next iteration of color changing to that cube.
+
+    It is activated by clicking on bool activateRandomAutomaticFinder
+    You need to click again for each iteration in the editor on the starting cube.
+  RandomGroupFinder
+    First, paint all the cubes one by one that are closest to the starting cube. Then he takes the last 
+    cube he colored and transfers the next round of coloring to that cube.
+
+    It is activated by clicking on bool activateRandomGroupFinder
+    You need to click again for each iteration in the editor on the starting cube.
+
+  RandomStartAndCloserFinder
+    It does everything the same as RandomAutomaticFinderbut but in the end, when he can no longer find a cube, 
+    he increases the search area until he finds the nearest unpainted cube.And start again from that cube.
+
+    It is activated by clicking on bool activateRandomStartAndCloserFinder
+    You need to click again for each iteration in the editor on the starting cube.
+    
